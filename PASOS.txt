@@ -1,0 +1,33 @@
+#ESTO ES PARA CREAR UNA VARIABLE DE IMAGENES Y ALMACENARLO
+1.- creamos una carpeta media
+2.-en settings al final hacemos lo siguiente
+
+"import os
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
+"
+Luego vamos a urls.py de SHOP
+y hacemos lo siguiente:
+
+##importar settings
+from django.conf import settings
+from django.conf.urls.static import static
+y por ultimo :
+"static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)"
+#================================================================================
+
+3.-AHORa creamos una base de datos
+4.-en settings configurar la base datos y usar mysql.
+
+OJO: podría pedirnos instalar Pillow lo instalamos.
+5.-hacemos las migraciones:
+
+py manage.py makemigrations
+py manage.py migrate
+
+Listo ya tenemos los datos migrados en mysql
+
+#pasos para crear nuevas vistas
+##PLANTILLA/VISTA/URLS
+
+
